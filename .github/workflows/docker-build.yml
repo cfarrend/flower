@@ -11,4 +11,4 @@ jobs:
       run: |
         docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASS }}
         docker build -t cfarrend/flower:${GITHUB_REF#refs/*/} .
-        docker push cfarrend/flower
+        docker push cfarrend/flower:${GITHUB_REF#refs/*/}
