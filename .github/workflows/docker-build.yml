@@ -9,5 +9,6 @@ jobs:
     - uses: actions/checkout@v2
     - name: Docker Build
       run: |
+        git describe --tags || true
         docker build -t cfarrend/flower:$(git describe --tags) .
 
